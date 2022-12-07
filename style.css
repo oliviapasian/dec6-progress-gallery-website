@@ -1,0 +1,848 @@
+html {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #d0deb8;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+img {
+  width: 100%;
+  transition: 0.3s;
+}
+img:hover{
+  transform:translateY(10px);
+}
+button {
+  cursor: pointer;
+}
+
+/*
+Typeface Directory
+  font-family: belda-extended, Georgia, sans-serif;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-family: birra-pils, Arial, sans-serif;
+  font-family: bilo, Verdana, sans-serif;
+*/
+
+h2,
+h3,
+h4 {
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  margin: 10px;
+}
+
+p {
+  font-family: bilo, Verdana, sans-serif;
+  margin: 10px;
+}
+
+/* Introduction */
+.introduction {
+  width: 100vw;
+  height: 110vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: #15432c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduction h1 {
+  font-size: 7vw;
+  color: #d0deb8;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-weight: 900;
+  margin: 0;
+}
+
+.introduction p {
+  padding-bottom: 30px;
+  font-size: 2.5vw;
+  color: #d0deb8;
+  font-family: bilo, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  width: 70vw;
+  text-align: center;
+}
+
+.introduction button {
+  background: none;
+  border: none;
+  background: #d0deb8;
+  color: #15432c;
+  padding: 20px;
+  border-radius: 0px;
+  font-size: 30px;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.introduction button:hover {
+  background: #769e87;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #15432c;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.3s;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #d0deb8;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #769e87;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #15432c;
+  color: #d0deb8;
+  border: none;
+  height: 100%;
+  width: 35px;
+  position: fixed;
+  top: 0px;
+  left: 60px;
+  bottom: auto;
+}
+
+.openbtn:hover {
+  background-color: #769e87;
+}
+
+#arrow-button {
+  transform: auto;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* About Page */
+.about-overlay {
+  visibility: hidden;
+  position: absolute;
+  background: #769e87;
+  width: 70vw;
+  height: 70vh;
+  left: 15%;
+  top: 15%;
+}
+
+.about-overlay.active {
+  visibility: visible;
+  text-align: center;
+}
+
+.about-content {
+  visibility: hidden;
+  font-family: bilo, Verdana, sans-serif;
+  color: #15432c;
+  padding: 5px;
+}
+
+.about-content a {
+  color: #15432c;
+  text-decoration: underline;
+}
+.about-content h2 {
+  font-size: 2.5vw;
+}
+.about-content h3 {
+  font-size: 2vw;
+}
+.about-content p {
+  font-size: 1.7vw;
+}
+.about-content.active {
+  visibility: visible;
+}
+
+.about-button {
+  background: none;
+  border: none;
+  background: #15432c;
+  color: #d0deb8;
+  padding: 10px;
+  border-radius: 0px;
+  font-size: 30px;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-weight: bolder;
+  transition: 0.3s;
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  opacity: 75%;
+  transform: auto;
+}
+
+.about-button:hover {
+  background-color: #769e87;
+}
+
+.close {
+  background: none;
+  border: none;
+  background: #15432c;
+  color: #d0deb8;
+  padding: 10px;
+  border-radius: 0px;
+  font-size: 20px;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-weight: bolder;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 30px;
+}
+
+
+
+/* Filtering */
+.filter-background {
+  width: 60px;
+  height: 100%;
+  background-color: #15432c;
+  padding: 0;
+  margin: 0;
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  bottom: auto;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-button-group button {
+  border: none;
+  border-radius: 50%;
+  padding: 20px;
+  color: #15432c;
+  background: #d0deb8;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  margin-right: 8px;
+  transition: background 0.3s;
+  position: fixed;
+  z-index: 2;
+}
+
+.filter-button-group button:hover {
+  background-color: #769e87;
+}
+
+#all-filter {
+  top: 10vh;
+  left: 15px;
+  padding: 7px;
+  bottom: auto;
+}
+
+#red-filter {
+  background: #e6462d;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 22.5vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#red-filter:hover {
+  background: #b71800;
+}
+
+#orange-filter {
+  background: #f68655;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 35vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#orange-filter:hover {
+  background: #ff5911;
+}
+
+#yellow-filter {
+  background: #e4d444;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 47.5vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#yellow-filter:hover {
+  background: #fffb00;
+}
+
+#green-filter {
+  background: #99ce60;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 60vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#green-filter:hover {
+  background: #56d815;
+}
+
+#blue-filter {
+  background: #669dce;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 72.5vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#blue-filter:hover {
+  background: #099ceb;
+}
+
+#purple-filter {
+  background: #8e77cf;
+  color: #303a61;
+  transition: background 0.3s;
+  top: 85vh;
+  left: 15px;
+  bottom: auto;
+}
+
+#purple-filter:hover {
+  background: #a13be9;
+}
+/* End colour filter, start dropdown filters */
+.filter-dropdown-subject{
+  left: 100px;
+  top: 100px;
+  position: absolute;
+  background-color: #d0deb8;
+  border: 0px;
+  height: 40px;
+  width: 200px;
+  font-size: 18px;
+  color: #15432c;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+}
+.filter-dropdown-impressionist-artist{
+  left: 100px;
+  top: 200px;
+  position: absolute;
+  background-color: #d0deb8;
+  border: 0px;
+  height: 40px;
+  width: 200px;
+  font-size: 18px;
+  color: #15432c;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+}
+.filter-dropdown-postimpressionist-artist{
+  left: 100px;
+  top: 300px;
+  position: absolute;
+  background-color: #d0deb8;
+  border: 0px;
+  height: 40px;
+  width: 200px;
+  font-size: 18px;
+  color: #15432c;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+}
+.isotope-reset{
+  left: 100px;
+  top: 400px;
+  position: absolute;
+  background-color: #d0deb8;
+  border: 0px;
+  height: 40px;
+  width: 200px;
+  font-size: 18px;
+  color: #15432c;
+  font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+  transition: 0.3s;
+}
+
+.isotope-reset:hover{
+  background-color: #769e87;
+}
+
+.paintbox{
+  background-color: white;
+  position: absolute;
+  left: 100px;
+  top: 500px;
+  width: 200px;
+  height: 300px;
+}
+
+/* Grid */
+.post-impressionism-title {
+  position: fixed;
+  top: 0px;
+  left: 62%;
+  font-size: 1.5vw;
+  background-color: #15432c;
+  color: #d0deb8;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 65px;
+}
+
+.impressionism-title {
+  position: fixed;
+  top: 0px;
+  left: 22%;
+  font-size: 1.5vw;
+  background-color: #15432c;
+  color: #d0deb8;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 65px;
+}
+
+.painting-grid {
+  height: 100vh !important;
+  width: 100%;
+}
+
+.painting1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  height: 93vh !important;
+  width: 49%;
+  float: left;
+  overflow: scroll;
+}
+
+.painting2 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  height: 93vh !important;
+  width: 49%;
+  float: right;
+  overflow: scroll;
+}
+
+.painting-item {
+  background-color: #d0deb8;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.painting-item a {
+  color: #15432c;
+}
+
+.painting-item h2 {
+  margin-bottom: 24px;
+  background-color: #769e87;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: fit-content;
+  font-size: 25px;
+  color: #15432c;
+}
+
+.painting-item h3 {
+  font-size: 20px;
+  color: #15432c;
+}
+
+.painting-item h4 {
+  font-size: 19px;
+  font-style: italic;
+  color: #15432c;
+}
+
+.painting-item p {
+  font-size: 18px;
+  color: #15432c;
+}
+
+.painting-item .painting-content {
+  padding: 10px 0px 0px 0px;
+}
+
+
+/* Responsiveness */
+@media (max-width:960px) {
+  body {
+    background: #d0deb8;
+    padding: 10px;
+    margin-left: auto;
+  }
+
+  .introduction h1 {
+    font-size: 8vw;
+    color: #d0deb8;
+    font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .introduction p {
+    padding-bottom: 30px;
+    font-size: 3.5vw;
+    color: #d0deb8;
+    font-family: bilo, Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    width: 70vw;
+    text-align: center;
+  }
+
+  /* About Page */
+  .about-overlay {
+    visibility: hidden;
+    position: absolute;
+    background: #769e87;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
+  }
+
+  .about-overlay.active {
+    visibility: visible;
+    text-align: center;
+  }
+
+  .about-content {
+    visibility: hidden;
+    font-family: bilo, Verdana, sans-serif;
+    color: #15432c;
+    padding: 5px;
+  }
+  .about-content h2 {
+    font-size: 6vw;
+  }
+  .about-content h3 {
+    font-size: 4.2vw;
+    margin-top: 25px;
+  }
+  .about-content p {
+    font-size: 3.8vw;
+  }
+  .about-content.active {
+    visibility: visible;
+  }
+
+  .about-button {
+    background: none;
+    border: none;
+    background: #15432c;
+    color: #d0deb8;
+    padding: 10px;
+    border-radius: 0px;
+    font-size: 30px;
+    font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+    font-weight: bolder;
+    transition: 0.3s;
+    position: fixed;
+    bottom: 125px;
+    right: -35px;
+    opacity: 75%;
+    transform: rotate(270deg);
+  }
+
+  .about-button:hover {
+    background-color: #769e87;
+  }
+
+  .close {
+    background: none;
+    border: none;
+    background: #15432c;
+    color: #d0deb8;
+    padding: 10px;
+    border-radius: 0px;
+    font-size: 20px;
+    font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+    font-weight: bolder;
+  }
+
+
+  /* Filtering */
+  .filter-background {
+    height: 60px;
+    width: 100%;
+    background-color: #15432c;
+    padding: 0;
+    margin: 0;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    z-index: 8;
+    top: auto;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .filter-button-group button {
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    color: #15432c;
+    background: #d0deb8;
+    font-family: new-farm, 'Segoe UI', Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    margin-right: 8px;
+    transition: background 0.3s;
+    position: fixed;
+    z-index: 2;
+  }
+
+  #all-filter {
+    left: 5vw;
+    bottom: 15px;
+    padding: 7px;
+    z-index: 9;
+    top: auto;
+  }
+
+  #red-filter {
+    background: #e6462d;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 19vw;
+    z-index: 9;
+    top: auto;
+  }
+
+  #orange-filter {
+    background: #f68655;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 33vw;
+    z-index: 9;
+    top: auto;
+  }
+
+  #yellow-filter {
+    background: #e4d444;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 47vw;
+    z-index: 9;
+    top: auto;
+  }
+
+  #green-filter {
+    background: #99ce60;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 61vw;
+    z-index: 9;
+    top: auto;
+  }
+
+  #blue-filter {
+    background: #669dce;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 75vw;
+    z-index: 9;
+    top: auto;
+  }
+
+  #purple-filter {
+    background: #8e77cf;
+    color: #303a61;
+    transition: background 0.3s;
+    bottom: 15px;
+    left: 90vw;
+    z-index: 9;
+    top: auto;
+  }
+
+
+  /* Sidebar */
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #15432c;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #d0deb8;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar a:hover {
+    color: #769e87;
+  }
+
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #15432c;
+    color: #d0deb8;
+    border: none;
+    width: 100%;
+    height: 35px;
+    position: fixed;
+    bottom: 59px;
+    left: 0px;
+    z-index: 9;
+    top: auto;
+  }
+
+  .openbtn:hover {
+    background-color: #769e87;
+  }
+
+  #main {
+    transition: margin-left .5s;
+    padding: 30px;
+  }
+
+  #arrow-button {
+    transform: rotate(270deg);
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* Painting style */
+  .post-impressionism-title {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    font-size: 2vw;
+    background-color: #15432c;
+    color: #d0deb8;
+    height: 61px;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .impressionism-title {
+    position: fixed;
+    top: 0px;
+    left: 2%;
+    font-size: 2vw;
+    background-color: #15432c;
+    color: #d0deb8;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 61px;
+    padding-top: 10px;
+  }
+
+  .painting1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 85vh !important;
+    width: 49%;
+    float: left;
+    overflow: scroll;
+  }
+
+  .painting2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    height: 85vh !important;
+    width: 49%;
+    float: right;
+    overflow: scroll;
+  }
+
+  .painting-item h2 {
+    margin-bottom: 24px;
+    background-color: #769e87;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: fit-content;
+    font-size: 21px;
+    color: #15432c;
+  }
+
+  .painting-item h3 {
+    font-size: 16px;
+    color: #15432c;
+  }
+
+  .painting-item h4 {
+    font-size: 16px;
+    font-style: italic;
+    color: #15432c;
+  }
+
+  .painting-item p {
+    font-size: 16px;
+    color: #15432c;
+  }
+}
